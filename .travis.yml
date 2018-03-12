@@ -4,7 +4,7 @@ go:
 - '1.9'
 - '1.10'
 before_deploy:
-  - tar -cfz envdir.linux-amd64.tar.gz envdir
+  - tar cvfz envdir.linux-amd64.tar.gz envdir
 deploy:
   provider: releases
   api_key:
