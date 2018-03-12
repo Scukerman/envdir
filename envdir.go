@@ -145,8 +145,7 @@ func getEnvironmentVariables(directory string, freshEnvironment bool) environmen
 
 		// ensure the name
 		if !envNameRegex.MatchString(fileName) {
-			fmt.Fprintf(os.Stderr, "Error: Filename can contain only a-zA-Z0-9_ and cannot start with digit: \"%s\"\n", fileName)
-			os.Exit(exitCodeUnsuccessful)
+			continue
 		}
 
 		// ensure the size
