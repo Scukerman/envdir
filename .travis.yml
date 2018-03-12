@@ -3,11 +3,13 @@ go:
 - '1.8'
 - '1.9'
 - '1.10'
+before_deploy:
+  - tar -cfz envdir.linux-amd64.tar.gz envdir
 deploy:
   provider: releases
   api_key:
     secure: iNeFqHcqXWa52yzxmglLEu5IquE9rdE2cVaGjmx8eFap7crJnQnUtSyPWLCtJqkK8oXuoe0d3l3UQbAny3CrA+0E0oOORX5qJSXa/4JgukX2u48Hv5mT3Qc8e5g7dOONWdM6aaw9VywSjZPRvbaGwVnh9lMQwCgIjlJOHO+J8FiJJS1Kk5OqyfaU/XP0ABKloTUz7J3eENDnI7QdgIXkRnGDbdycrwbBzrG3KuGCZBF33whUILCNTolnj8XWv6p9f05Ne5UDy9Xn7NuvRoM4iQ22xsqjo3DYzGXSynm4YCVjA9r9WGHvLNt+/+z8RQe7lbfOznJpHDzBzhog1qGJXPbqK/LyHzg0cvVejLUpozGdkOV6St4sTbHhiRZPRnijGFcTydkfDNDxCs3LwyWmJKItMZN9ZZ/UN7XBVq8ZrdrY4PkXI4IkfnMJYs+SqJDXPP31fTKVsks45I28//Ci7HecLeMHYE6pqKvR5STDfFDLwuUbqX8G6+FHNRQ8voDO8Euidf/vH7Afh+VtaXkbX44/SlKUT8Ohp+TBt6/shW5cyIsFWYIqAMduR16L7JEnr9alip9acB0ikMrsqyUEu7EmiQawx78ULTN9apL7GHkBOA6YzRrt+vS+QhpIpymoRJyKmYMh06UbU5uUUQwGXDYWBLSMnXl/64DRd9PUxM0=
-  file: envdir
+  file: envdir.linux-amd64.tar.gz
   skip_cleanup: true
   on:
     repo: Scukerman/envdir
